@@ -5,7 +5,7 @@ import AMapLoader from "@amap/amap-jsapi-loader";
 let map:any = null;
 
 onMounted(() => {
-    window._AMapSecurityConfig:any = {
+    window._AMapSecurityConfig = {
         securityJsCode: "c2aa419cd747a13acb0e65171642cc44",
     };
     AMapLoader.load({
