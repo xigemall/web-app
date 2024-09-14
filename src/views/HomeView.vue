@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+// import TheWelcome from '../components/TheWelcome.vue'
+import MapContainer from "@/components/MapContainer.vue";
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <MapContainer />
   </main>
 </template>
