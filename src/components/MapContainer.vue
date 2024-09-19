@@ -32,7 +32,7 @@ const initAMap = () => {
     AMapLoader.load({
         key: aMapKey, // 申请好的Web端开发者Key，首次调用 load 时必填
         version: "2.0", // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
-        plugins: ["AMap.Scale"], //需要使用的的插件列表，如比例尺'AMap.Scale'，支持添加多个如：['...','...']
+        plugins: ["AMap.Scale","AMap.ControlBar","AMap.ToolBar"], //需要使用的的插件列表，如比例尺'AMap.Scale'，支持添加多个如：['...','...']
     })
         .then((AMap) => {
             map = new AMap.Map("container", {
@@ -43,11 +43,26 @@ const initAMap = () => {
             });
 
 
-            // const traffic = new AMap.TileLayer.Traffic({
-            //     autoRefresh: true, //是否自动刷新，默认为false
-            //     interval: 180, //刷新间隔，默认180s
-            // });
-            // map.add(traffic); //通过add方法添加图层
+            const traffic = new AMap.TileLayer.Traffic({
+                autoRefresh: true, //是否自动刷新，默认为false
+                interval: 180, //刷新间隔，默认180s
+            });
+            map.add(traffic); //通过add方法添加图层
+
+            const controlBar = new AMap.ControlBar({
+                position:{
+                    right:'10px',
+                    top:'10px'
+                }
+            });
+            const toolBar = new AMap.ToolBar({
+                position: {
+                    top: '110px',
+                    right: '40px'
+                }
+            });
+            map.addControl(controlBar)
+            map.addControl(toolBar)
         })
         .catch((e) => {
             console.log(e);
