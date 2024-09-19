@@ -43,11 +43,11 @@ const initAMap = () => {
             });
 
 
-            const traffic = new AMap.TileLayer.Traffic({
-                autoRefresh: true, //是否自动刷新，默认为false
-                interval: 180, //刷新间隔，默认180s
-            });
-            map.add(traffic); //通过add方法添加图层
+            // const traffic = new AMap.TileLayer.Traffic({
+            //     autoRefresh: true, //是否自动刷新，默认为false
+            //     interval: 180, //刷新间隔，默认180s
+            // });
+            // map.add(traffic); //通过add方法添加图层
         })
         .catch((e) => {
             console.log(e);
@@ -70,6 +70,6 @@ onUnmounted(() => {
 <style scoped lang="less">
 #container {
     width: 100%;
-    height: 600px;
+    height: 100vh;
 }
 </style>
